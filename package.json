@@ -1,0 +1,26 @@
+{
+  "type": "module",
+  "name": "uuid-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.19.2",
+    "uuid-generator-ts": "^1.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelomagario/UUID-generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelomagario/UUID-generator/issues"
+  },
+  "homepage": "https://github.com/marcelomagario/UUID-generator#readme"
+}
