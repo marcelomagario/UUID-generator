@@ -9,12 +9,14 @@
     "express": "^4.19.2",
     "uuid-generator-ts": "^1.1.0"
   },
-  "engine": {
+  "engines": {
     "node": "16.17.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build:frontend": "cd frontend && npm install && npm run build"
+
   },
   "repository": {
     "type": "git",
