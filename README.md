@@ -12,19 +12,4 @@ Acesse o aplicativo em seu navegador:
 http://localhost:3000
 
 
-seu-repositorio/
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── UUIDGenerator.tsx
-│   │   ├── App.tsx
-│   │   └── index.tsx
-│   ├── package.json
-│   └── tsconfig.json
-└── backend/
-    ├── src/
-    │   ├── routes/
-    │   │   └── uuidRoutes.ts
-    │   └── server.ts
-    ├── package.json
-    └── tsconfig.json
+![image](https://github.com/user-attachments/assets/8e8480d7-05a6-483f-a16b-37362b2f7b49)
