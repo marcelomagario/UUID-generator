@@ -10,24 +10,6 @@ const uuidRoutes_1 = __importDefault(require("./routes/uuidRoutes"));
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const PORT = process.env.PORT || 3001;
-// Lista de origens permitidas
-// const allowedOrigins: string[] = [
-//   'https://uuid-generator-frontend.onrender.com',
-//   'http://localhost:3000'
-// ];
-// // Função de configuração do CORS
-// const corsOptions: CorsOptions = {
-//   origin: (origin: string | undefined, callback: (err: Error | null, allowed?: boolean) => void) => {
-//     // Permite solicitações de origens na lista de permitidas ou sem origem
-//     if (origin === undefined || allowedOrigins.includes(origin)) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'), false);
-//     }
-//   },
-//   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//   allowedHeaders: ['Content-Type', 'Authorization']
-// };
 // // CORS
 app.use((req, res, next) => {
     const proxied = req.header('x-nginx-proxy');

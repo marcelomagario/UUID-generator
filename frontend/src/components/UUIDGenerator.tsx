@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { API_URL } from '../config';
+import '../styles/UUIDGenerator.css';
 
 
 const UUIDGenerator: React.FC = () => {
@@ -20,16 +21,21 @@ const UUIDGenerator: React.FC = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Free UUID Generator</h1>
-      <img src="/images/img_01.png" alt="Design" />
-
-      <button onClick={fetchUUIDs}>Refresh</button>
-      <ul>
-        {uuids.map((uuid, index) => (
-          <li key={index}>{uuid}</li>
-        ))}
-      </ul>
+    <div className='main'>
+      <div className="container-left">
+        <header className="header">
+          <h1 className="title">Free UUID Generator</h1>
+        </header>
+        <ul className="uuid-list">
+          {uuids.map((uuid, index) => (
+            <li key={index} className="uuid-item">{uuid}</li>
+          ))}
+        </ul>
+        <button className="refresh-button" onClick={fetchUUIDs}>Refresh</button>
+      </div>
+      <div className="container-right">
+        <img className="image" src="/images/img_01.png" alt="Design" />
+      </div>
     </div>
   );
 };
