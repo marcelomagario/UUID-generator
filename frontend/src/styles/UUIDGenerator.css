@@ -16,6 +16,21 @@
     max-width: 600px; /* Define uma largura máxima para o container */
   }
   
+  .warning {
+    display: flex;
+    padding: 2em 0;
+  }
+
+  .warning-font {
+    text-align: center;
+    font-family: Google Sans, Google Sans Text, Roboto, Arial, sans-serif;
+    color: #a9aaac;
+    font-size: 12px;
+    align-items: center;
+    /* line-height: 44px;
+    font-weight: 700; */
+  }
+
   /* Cabeçalho com título */
   .header {
     display: flex;
@@ -25,9 +40,13 @@
   }
   
   .title {
-    font-size: 2rem;
-    margin: 0;
-  }
+    font-family: Google Sans, Google Sans Text, Roboto, Arial, sans-serif;
+    color: #1182ec;
+    font-size: 64px;
+    line-height: 44px;
+    font-weight: 700;
+    letter-spacing: -5px; 
+    }
   
   /* Lista de UUIDs */
   .uuid-list {
@@ -40,8 +59,8 @@
   }
   
   .uuid-item {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    border-bottom: 1px solid #00000011;
   }
   
   /* Botão de Refresh */
@@ -50,9 +69,9 @@
     padding: 10px 20px;
     font-size: 1rem;
     color: #fff;
-    background-color: #007bff;
+    background-color: #1A73E8;
     border: none;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -63,7 +82,9 @@
   
   /* Imagem */
   .image {
-    max-width: 100%; /* Permite que a imagem se ajuste ao tamanho do container */
-    height: auto;
+    /* max-width: 100%; 
+    height: auto; */
+    width: 500px;
+    height: 500px;
   }
   

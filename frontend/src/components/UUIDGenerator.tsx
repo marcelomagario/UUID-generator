@@ -35,13 +35,16 @@ const UUIDGenerator: React.FC = () => {
         <button className="refresh-button" onClick={fetchUUIDs}>
           Refresh
         </button>
-        xx
-        While it is statistically improbable for our system to generate
+
+        <div className="warning">
+        <p className = "warning-font">While it is statistically improbable for our system to generate
         duplicate UUIDs, the UUIDs provided by this site come with no guarantees
         of uniqueness. We do not guarantee the uniqueness or reliability of the
         UUIDs. You are fully responsible for their use and assume all risks
         associated with them. By using the UUIDs from this site, you accept
         these terms. Avoid using UUIDs from cached versions of this page.
+        </p>
+        </div>
       </div>
       <div className="container-right">
         <img className="image" src="/images/img_01.png" alt="Design" />
