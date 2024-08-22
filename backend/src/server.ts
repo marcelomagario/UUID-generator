@@ -9,22 +9,23 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Lista de origens permitidas
-const allowedOrigins: string[] = ['https://uuid-generator-frontend.onrender.com/', 'http://another-example.com'];
+  // // CORS
+  app.use((req, res, next) => {
+    const proxied = req.header('x-nginx-proxy');
 
-// Função de configuração do CORS
-const corsOptions: CorsOptions = {
-  origin: (origin: string | undefined, callback: (err: Error | null, allowed?: boolean) => void) => {
-    // Permite solicitações de origens na lista de permitidas ou sem origem
-    if (origin === undefined || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'), false);
+    if (!proxied) {
+      res.header('Access-Control-Allow-Origin', req.get('Origin') || '*');
+      res.header('Access-Control-Allow-Credentials', 'true');
+      res.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+      res.header('Access-Control-Allow-Headers', 'authorization, cache-control, content-type, dnt, if-modified-since, keep-alive, pragma, range, user-agent, x-customheader, x-legacy-authorization, x-requested-with, mz-internal-app, mz-token-data, mz-finger-print, mz-finger-print-data');
     }
-  },
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
+    if (req.method === 'OPTIONS') {
+      res.statusCode = 200;
+      return res.send();
+    }
+    return next();
+  });
+
 app.use(express.json());
 
 // Usar as rotas definidas em uuidRoutes

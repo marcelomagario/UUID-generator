@@ -22,6 +22,8 @@ const UUIDGenerator: React.FC = () => {
   return (
     <div>
       <h1>Free UUID Generator</h1>
+      <img src="/images/img_01.png" alt="Design" />
+
       <button onClick={fetchUUIDs}>Refresh</button>
       <ul>
         {uuids.map((uuid, index) => (
