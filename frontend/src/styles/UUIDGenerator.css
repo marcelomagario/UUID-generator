@@ -1,8 +1,8 @@
 /* Container principal */
 .main {
     display: flex;
-    justify-content: space-between; /* Espaça os containers à esquerda e à direita */
-    align-items: center; /* Centraliza verticalmente o conteúdo dentro da div principal */
+    justify-content: center; 
+    align-items: center; 
     padding: 20px;
   }
   
