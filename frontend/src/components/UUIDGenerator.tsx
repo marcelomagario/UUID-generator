@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { API_URL } from "../config";
 import "../styles/UUIDGenerator.css";
+import copy from "copy-to-clipboard";
 
 const UUIDGenerator: React.FC = () => {
-  const [uuids, setUuids] = React.useState<string[]>([]);
+  const [uuids, setUuids] = useState<string[]>([]);
+  const [copiedUuids, setCopiedUuids] = useState<Set<string>>(new Set());
 
   const fetchUUIDs = async () => {
     try {
@@ -15,7 +17,16 @@ const UUIDGenerator: React.FC = () => {
     }
   };
 
-  React.useEffect(() => {
+  const handleCopy = (uuid: string) => {
+    copy(uuid);
+    setCopiedUuids(prevCopiedUuids => {
+      const newCopiedUuids = new Set(prevCopiedUuids);
+      newCopiedUuids.add(uuid);
+      return newCopiedUuids;
+    });
+  };
+
+  useEffect(() => {
     fetchUUIDs();
   }, []);
 
@@ -28,7 +39,8 @@ const UUIDGenerator: React.FC = () => {
         <ul className="uuid-list">
           {uuids.map((uuid, index) => (
             <li key={index} className="uuid-item">
-              {uuid}
+              <span className={`uuid-text ${copiedUuids.has(uuid) ? 'copied' : ''}`}>{uuid}</span>
+              <button className="copy-button" onClick={() => handleCopy(uuid)}>Copy</button>
             </li>
           ))}
         </ul>
@@ -37,13 +49,13 @@ const UUIDGenerator: React.FC = () => {
         </button>
 
         <div className="warning">
-        <p className = "warning-font">While it is statistically improbable for our system to generate
-        duplicate UUIDs, the UUIDs provided by this site come with no guarantees
-        of uniqueness. We do not guarantee the uniqueness or reliability of the
-        UUIDs. You are fully responsible for their use and assume all risks
-        associated with them. By using the UUIDs from this site, you accept
-        these terms. Avoid using UUIDs from cached versions of this page.
-        </p>
+          <p className="warning-font">While it is statistically improbable for our system to generate
+          duplicate UUIDs, the UUIDs provided by this site come with no guarantees
+          of uniqueness. We do not guarantee the uniqueness or reliability of the
+          UUIDs. You are fully responsible for their use and assume all risks
+          associated with them. By using the UUIDs from this site, you accept
+          these terms. Avoid using UUIDs from cached versions of this page.
+          </p>
         </div>
       </div>
       <div className="container-right">

@@ -88,3 +88,29 @@
     height: 500px;
   }
   
+  /* Adiciona estilos para o texto do UUID */
+.uuid-text {
+  display: inline-block;
+  margin-right: 10px;
+  transition: color 0.3s ease;
+}
+
+/* Estilo para UUID quando é copiado */
+.uuid-text.copied {
+  color: #aaa; /* Cor mais clara para indicar que foi copiado */
+}
+
+/* Estilo para o botão de copiar */
+.copy-button {
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  color: #fff;
+  background-color: #1A73E8;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.copy-button:hover {
+  background-color: #0056b3;
+}
