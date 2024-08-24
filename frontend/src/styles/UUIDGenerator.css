@@ -91,6 +91,8 @@
   /* Adiciona estilos para o texto do UUID */
 .uuid-text {
   display: inline-block;
+  color: #4d4d5e;
+  font-size: 20px;
   margin-right: 10px;
   transition: color 0.3s ease;
 }
@@ -100,7 +102,30 @@
   color: #aaa; /* Cor mais clara para indicar que foi copiado */
 }
 
-/* Estilo para o botão de copiar */
+.copy-button {
+  padding: 5px;
+  font-size: 1rem; /* Ajuste o tamanho do ícone conforme necessário */
+  color: #7e7878;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.copy-button i {
+  font-size: 1.2rem; /* Ajuste o tamanho do ícone conforme necessário */
+}
+
+.copy-button:hover {
+  color: #4346e4;
+  background-color: #ffffff;
+}
+
+
+/* Estilo para o botão de copiar
 .copy-button {
   padding: 5px 10px;
   font-size: 0.9rem;
@@ -113,4 +138,6 @@
 
 .copy-button:hover {
   background-color: #0056b3;
-}
+} */
+
+

@@ -3,6 +3,8 @@ import axios from "axios";
 import { API_URL } from "../config";
 import "../styles/UUIDGenerator.css";
 import copy from "copy-to-clipboard";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const UUIDGenerator: React.FC = () => {
   const [uuids, setUuids] = useState<string[]>([]);
@@ -40,7 +42,8 @@ const UUIDGenerator: React.FC = () => {
           {uuids.map((uuid, index) => (
             <li key={index} className="uuid-item">
               <span className={`uuid-text ${copiedUuids.has(uuid) ? 'copied' : ''}`}>{uuid}</span>
-              <button className="copy-button" onClick={() => handleCopy(uuid)}>Copy</button>
+              <button className="copy-button"  onClick={() => handleCopy(uuid)}><i className="fas fa-copy"></i>
+              </button>
             </li>
           ))}
         </ul>
