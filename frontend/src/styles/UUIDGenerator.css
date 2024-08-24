@@ -1,94 +1,82 @@
-/* Container principal */
+/* Estilos base para telas maiores */
 .main {
-    display: flex;
-    justify-content: center; 
-    align-items: center; 
-    padding: 20px;
-  }
-  
-  /* Container principal para o conteúdo da esquerda */
-  .container-left {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centraliza horizontalmente o conteúdo dentro da container */
-    padding: 20px;
-    flex: 1; /* Faz com que o container ocupe o espaço restante à esquerda */
-    max-width: 600px; /* Define uma largura máxima para o container */
-  }
-  
-  .warning {
-    display: flex;
-    padding: 2em 0;
-  }
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px;
+}
 
-  .warning-font {
-    text-align: center;
-    font-family: Google Sans, Google Sans Text, Roboto, Arial, sans-serif;
-    color: #a9aaac;
-    font-size: 12px;
-    align-items: center;
-    /* line-height: 44px;
-    font-weight: 700; */
-  }
+.container-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centraliza horizontalmente o conteúdo dentro da container */
+  padding: 20px;
+  flex: 1; /* Faz com que o container ocupe o espaço restante à esquerda */
+  max-width: 600px; /* Define uma largura máxima para o container */
+}
 
-  /* Cabeçalho com título */
-  .header {
-    display: flex;
-    justify-content: center; /* Centraliza o título horizontalmente */
-    width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .title {
-    font-family: Google Sans, Google Sans Text, Roboto, Arial, sans-serif;
-    color: #1182ec;
-    font-size: 64px;
-    line-height: 44px;
-    font-weight: 700;
-    letter-spacing: -5px; 
-    }
-  
-  /* Lista de UUIDs */
-  .uuid-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    max-width: 100%;
-    text-align: center; /* Centraliza o texto dentro da lista */
-  }
-  
-  .uuid-item {
-    padding: 15px;
-    border-bottom: 1px solid #00000011;
-  }
-  
-  /* Botão de Refresh */
-  .refresh-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #1A73E8;
-    border: none;
-    /* border-radius: 5px; */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .refresh-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Imagem */
-  .image {
-    /* max-width: 100%; 
-    height: auto; */
-    width: 500px;
-    height: 500px;
-  }
-  
-  /* Adiciona estilos para o texto do UUID */
+.warning {
+  display: flex;
+  padding: 2em 0;
+}
+
+.warning-font {
+  text-align: center;
+  font-family: Google Sans, Google Sans Text, Roboto, Arial, sans-serif;
+  color: #a9aaac;
+  font-size: 12px;
+}
+
+.header {
+  display: flex;
+  justify-content: center; /* Centraliza o título horizontalmente */
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-family: Google Sans, Google Sans Text, Roboto, Arial, sans-serif;
+  color: #1182ec;
+  font-size: 64px;
+  line-height: 44px;
+  font-weight: 700;
+  letter-spacing: -5px; 
+}
+
+.uuid-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  text-align: center; /* Centraliza o texto dentro da lista */
+}
+
+.uuid-item {
+  padding: 15px;
+  border-bottom: 1px solid #00000011;
+}
+
+.refresh-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #1A73E8;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.refresh-button:hover {
+  background-color: #0056b3;
+}
+
+.image {
+  width: 500px;
+  height: 500px;
+}
+
 .uuid-text {
   display: inline-block;
   color: #4d4d5e;
@@ -97,7 +85,6 @@
   transition: color 0.3s ease;
 }
 
-/* Estilo para UUID quando é copiado */
 .uuid-text.copied {
   color: #aaa; /* Cor mais clara para indicar que foi copiado */
 }
@@ -124,20 +111,50 @@
   background-color: #ffffff;
 }
 
+/* Estilos para telas menores */
+@media (max-width: 768px) {
+  .main {
+      flex-direction: column; /* Mudar a direção do layout para coluna em telas menores */
+      padding: 10px; /* Reduzir o padding em telas menores */
+  }
 
-/* Estilo para o botão de copiar
-.copy-button {
-  padding: 5px 10px;
-  font-size: 0.9rem;
-  color: #fff;
-  background-color: #1A73E8;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  .container-left {
+      padding: 10px; /* Reduzir o padding do container em telas menores */
+      max-width: 100%; /* Permitir que o container ocupe toda a largura disponível */
+  }
+
+  .header {
+      margin-bottom: 15px; /* Reduzir o espaçamento abaixo do cabeçalho */
+  }
+
+  .title {
+      font-size: 35px; /* Reduzir o tamanho da fonte para o título em telas menores */
+      line-height: 1.2; /* Ajustar o line-height para se adequar ao tamanho da fonte */
+      letter-spacing: normal; /* Remover o espaçamento entre letras */
+  }
+
+  .uuid-item {
+      padding: 5px; /* Reduzir o padding nos itens da lista */
+  }
+
+  .uuid-text {
+    display: inline-block;
+    color: #4d4d5e;
+    font-size: 12px;
+  }
+
+  .refresh-button {
+      width: 100%; /* Fazer o botão ocupar a largura total disponível */
+      padding: 12px 0; /* Ajustar o padding do botão */
+      font-size: 1rem; /* Ajustar o tamanho da fonte do botão */
+  }
+
+  .image {
+      width: 100%; /* Ajustar a largura da imagem para ocupar 100% da largura disponível */
+      height: auto; /* Manter a proporção da imagem */
+  }
+
+  .container-right {
+      display: none; /* Ocultar a imagem no mobile para evitar layout quebrado */
+  }
 }
-
-.copy-button:hover {
-  background-color: #0056b3;
-} */
-
-
