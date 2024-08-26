@@ -59,6 +59,8 @@ const UUIDGenerator: React.FC = () => {
           associated with them. By using the UUIDs from this site, you accept
           these terms. Avoid using UUIDs from cached versions of this page.
           </p>
+          <p className="warning-font">Developed by Marcelo Magario - 2024
+          </p>
         </div>
       </div>
       <div className="container-right">
