@@ -1,41 +1,74 @@
-# UUID-generator
+# 🆔 UUID Generator
 
-I made it to help me in my daily task at work. 
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)
+![Express](https://img.shields.io/badge/Backend-Express.js-green)
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Render](https://img.shields.io/badge/Deploy-Render.com-orange)
 
+A simple full-stack application to generate UUIDs on demand.
 
-Link (PROD):
-https://uuid-generator-frontend.onrender.com/
+> 🔗 **Production Link**: [https://uuid-generator-frontend.onrender.com/](https://uuid-generator-frontend.onrender.com/)  
+> _Note: Hosted on Render free tier — the backend may take a few seconds to wake up._
+
+---
+
+## 🚀 Stack
+
+- **Frontend:** React + TypeScript
+- **Backend:** Express + TypeScript
+- **Environment Configuration:** `.env` file provided
+- **Deploy:** Render (frontend + backend)
+
+---
+
+## 🖼️ Preview
 
 ![image](https://github.com/user-attachments/assets/69d4791e-47bf-4ade-93d8-baa891bebd67)
 
-As a free server, it might take some seconds to wake-up the server and load the backend.
+---
 
-Stack:
-TypeScript, Express and React. 
+## 📦 Getting Started Locally
 
-Just setup the .env-example that I left to make it easier.
+1. Clone the repository:
+```bash
+git clone <repository-url>
+```
 
-To start the backend:
+2. Set up the environment variables:
+```bash
+cp .env.example .env
+```
 
-`
+3. Start the backend:
+```bash
 cd backend
+npm install
 npm start
-`
+```
 
-to start the frontend in another terminal:
-
-`
-cd frontend 
+4. In a separate terminal, start the frontend:
+```bash
+cd frontend
+npm install
 npm start
-`
+```
 
-to navigate on your local
+---
 
-`
-http://localhost:3000
-`
+## 🌐 Local Access
 
-structure:
+Once both servers are running:
+```
+Frontend: http://localhost:3000
+Backend: http://localhost:3333
+```
 
+---
+
+## 📁 Project Structure
 
 ![image](https://github.com/user-attachments/assets/8e8480d7-05a6-483f-a16b-37362b2f7b49)
+
+---
+
+_Last updated: 2025-07-23_
